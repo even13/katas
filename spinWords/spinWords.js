@@ -1,12 +1,5 @@
 function spinWords(sentence){
-  const words = sentence.split(" ")
-  const spin = []
-  words.forEach(function(word){
-    if(word.length < 5) {
-      spin.push(word)
-    } else {
-      spin.push(word.split("").reverse().join(""))
-    }
-  });
-  return spin.join(" ")
+  return sentence.split(' ').map(function (word) {
+    return (word.length > 4) ? word.split('').reverse().join('') : word;
+  }).join(' ');
 }
